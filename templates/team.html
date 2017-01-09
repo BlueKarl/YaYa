@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+{% extends "./base.html" %}
+{% block title %}鸭鸭直播{% endblock %}
+{% block head %}
+<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+{% endblock %}
+{% block body %}
+<style>
+    .breadcrumb{
+        background-color: #EEE;
+        margin-top: 20px;
+    }
+    .container{
+        background-color: #EEE;
+    }
+</style>
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation">
+    <img class="logo" src="./static/img/logo.png"></img>
+  </li>
+  <li role="presentation"> <a href="/"><strong><h4>看比赛</h4></strong></a></li>
+  <li role="presentation" class="active"><a href="/team"><strong><h4>球队</h4></strong></a></li>
+  <li role="presentation"><a href="/player"><strong><h4>球员</h4></strong></a></li>
+  <li role="presentation"><a href="#"><strong><h4>精彩动图</h4></strong></a></li>
+</ul>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="#">首页</a></li>
+          <li class="active">球队</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+       <h3>联盟对比</h3>
+    </div>
+    <div class="row">
+       <div id="main_df" style="float:left;width: 20%;height:400px;"></div>     
+       <div id="main_lb" style="float:left;width: 20%;height:400px;"></div>     
+       <div id="main_zg" style="float:left;width: 20%;height:400px;"></div>     
+       <div id="main_qd" style="float:left;width: 20%;height:400px;"></div>     
+       <div id="main_gm" style="float:left;width: 20%;height:400px;"></div>     
+    </div>
+</div>
+<script>
+var myChart1 = echarts.init(document.getElementById('main_df'));
+var myChart2 = echarts.init(document.getElementById('main_lb'));
+var myChart3 = echarts.init(document.getElementById('main_zg'));
+var myChart4 = echarts.init(document.getElementById('main_qd'));
+var myChart5 = echarts.init(document.getElementById('main_gm'));
+option_df = {
+    color: ['#445e75', '#45a7ca', '#98d5ef'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['球员', '联盟平均值', '联盟最高值'],
+        top: '10'
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '11%',
+        containLabel: true
+    },
+    calculable: true,
+    xAxis: [{
+        type: 'category',
+        data: ['得分']
+    }],
+    yAxis: [{
+        type: 'value',
+        name: 'count',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: '14',
+        }
+    }],
+    series: [{
+        name: '球员',
+        type: 'bar',
+        barWidth: 30,
+        data: [35],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟平均值',
+        type: 'bar',
+        stack: '联盟',
+        barWidth: 30,
+        data: [24],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟最高值',
+        type: 'bar',
+        barWidth: 30,
+        stack: '联盟',
+        data: [20],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }]
+}
+myChart1.setOption(option_df);
+option_lb = {
+    color: ['#445e75', '#45a7ca', '#98d5ef'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '11%',
+        containLabel: true
+    },
+    calculable: true,
+    xAxis: [{
+        type: 'category',
+        data: ['篮板']
+    }],
+    yAxis: [{
+        type: 'value',
+        name: 'count',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: '14',
+        }
+    }],
+    series: [{
+        name: '球员',
+        barWidth: 30,
+        type: 'bar',
+        data: [20],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟平均值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [15],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟最高值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [24],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }]
+}
+myChart2.setOption(option_lb);
+option_zg = {
+    color: ['#445e75', '#45a7ca', '#98d5ef'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '11%',
+        containLabel: true
+    },
+    calculable: true,
+    xAxis: [{
+        type: 'category',
+        data: ['助攻']
+    }],
+    yAxis: [{
+        type: 'value',
+        name: 'count',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: '14',
+        }
+    }],
+    series: [{
+        name: '球员',
+        barWidth: 30,
+        type: 'bar',
+        data: [26],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟平均值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [24],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟最高值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [30],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }]
+}
+myChart3.setOption(option_zg);
+option_qd = {
+    color: ['#445e75', '#45a7ca', '#98d5ef'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+            var tar = params[1];
+            return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+        },
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '11%',
+        containLabel: true
+    },
+    calculable: true,
+    xAxis: [{
+        type: 'category',
+        data: ['抢断']
+    }],
+    yAxis: [{
+        type: 'value',
+        name: 'count',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: '14',
+        }
+    }],
+    series: [{
+        name: '球员',
+        barWidth: 30,
+        type: 'bar',
+        data: [38],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟平均值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [27],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟最高值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [50],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }]
+}
+myChart4.setOption(option_qd);
+option_gm = {
+    color: ['#445e75', '#45a7ca', '#98d5ef'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '11%',
+        containLabel: true
+    },
+    calculable: true,
+    xAxis: [{
+        type: 'category',
+        data: ['盖帽']
+    }],
+    yAxis: [{
+        type: 'value',
+        name: 'count',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: '14',
+        }
+    }],
+    series: [{
+        name: '球员',
+        barWidth: 30,
+        type: 'bar',
+        data: [19],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟平均值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [54],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }, {
+        name: '联盟最高值',
+        barWidth: 30,
+        type: 'bar',
+        stack: '联盟',
+        data: [16],
+        label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+    }]
+}
+myChart5.setOption(option_gm);
+
+</script>
+{% endblock %}

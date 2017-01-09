@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% extends "./base.html" %}
+{% block title %}鸭鸭直播{% endblock %}
+{% block head %}
+<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+{% endblock %}
+{% block body %}
+<style>
+    button{
+        width: 120px;
+    }
+    #button{
+        font-size:0px;
+        background-color: #FFF;
+    }
+    .btn{
+        border-radius: 0px;
+    }
+    .breadcrumb{
+        background-color: #EEE;
+        margin-top: 20px;
+    }
+    .container{
+        background-color: #EEE;
+    }
+    .left-img{
+        width: 160px;
+        height: 120px;
+    }
+    td{
+     border: 0px solid transparent !important;
+    }
+    .row{
+        border-bottom: 1px solid #EEE;
+    }
+    .dl-horizontal{
+        border-right: 1px solid #EEE;
+        margin-top: 20px;
+    }
+    .dl-horizontal dt{
+        width: 40px;
+    }
+    .dl-horizontal dd{
+        margin-left: 50px;
+    }
+    #name{
+        border-right: 1px solid #EEE;
+        margin-top: 20px;
+    }
+    #player{
+        background-color: #FFF;
+    }
+    .table{
+        text-align: center;
+    }
+</style>
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation">
+    <img class="logo" src="./static/img/logo.png"></img>
+  </li>
+  <li role="presentation"><a href="/"><strong><h4>看比赛</h4></strong></a></li>
+  <li role="presentation"><a href="/team"><strong><h4>球队</h4></strong></a></li>
+  <li role="presentation" class="active"><a href="/player"><strong><h4>球员</h4></strong></a></li>
+  <li role="presentation"><a href="#"><strong><h4>精彩动图</h4></strong></a></li>
+</ul>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="#">首页</a></li>
+          <li class="active">球员</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="player">
+        <div class="col-md-2">
+          <img class="left-img" src="http://nbachina.qq.com/media/img/players/head/260x190/202695.png">
+        </div>
+        <div class="col-md-2" >
+          <dl id="name">
+            <dt><small>Kawhi Leonard</small></dt>
+            <dt><h3>科怀-莱昂纳德</h3></dt>
+            <dt>2号 / 前锋</dt>
+          </dl>
+        </div>
+        <div class="col-md-2">
+          <dl class="dl-horizontal"> 
+            <dt >身高:</dt><dd>200.0cm</dd>
+            <dt>体重:</dt><dd>104.3公斤</dd>
+            <dt>生日:</dt><dd>1991-06-29</dd>
+            <dt>选秀:</dt><dd>2011</dd>
+            <dt>经历:</dt><dd>5</dd>
+          </dl>
+        </div>
+        <div class="col-md-5">
+          <table class="table">
+            <tr>
+              <td>得分</td>
+              <td>篮板</td>
+              <td>助攻</td>
+              <td>抢断</td>
+              <td>盖帽</td>
+            </tr>
+            <tr>
+              <td><h2>24.0</h2></td>
+              <td><h2>5.9</h2></td>
+              <td><h2>3.1</h2></td>
+              <td><h2>1.9</h2></td>
+              <td><h2>0.6</h2></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="player">
+        <div class="col-md-2">
+          <img class="left-img" src="http://nbachina.qq.com/media/img/players/head/260x190/202695.png">
+        </div>
+        <div class="col-md-2" >
+          <dl id="name">
+            <dt><small>Kawhi Leonard</small></dt>
+            <dt><h3>科怀-莱昂纳德</h3></dt>
+            <dt>2号 / 前锋</dt>
+          </dl>
+        </div>
+        <div class="col-md-2">
+          <dl class="dl-horizontal"> 
+            <dt >身高:</dt><dd>200.0cm</dd>
+            <dt>体重:</dt><dd>104.3公斤</dd>
+            <dt>生日:</dt><dd>1991-06-29</dd>
+            <dt>选秀:</dt><dd>2011</dd>
+            <dt>经历:</dt><dd>5</dd>
+          </dl>
+        </div>
+        <div class="col-md-5">
+          <table class="table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>得分</td>
+              <td>篮板</td>
+              <td>助攻</td>
+              <td>抢断</td>
+              <td>盖帽</td>
+            </tr>
+            <tr>
+              <td><h2>24.0</h2></td>
+              <td><h2>5.9</h2></td>
+              <td><h2>3.1</h2></td>
+              <td><h2>1.9</h2></td>
+              <td><h2>0.6</h2></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="player">
+        <div class="col-md-2">
+          <img class="left-img" src="http://nbachina.qq.com/media/img/players/head/260x190/202695.png">
+        </div>
+        <div class="col-md-2" >
+          <dl id="name">
+            <dt><small>Kawhi Leonard</small></dt>
+            <dt><h3>科怀-莱昂纳德</h3></dt>
+            <dt>2号 / 前锋</dt>
+          </dl>
+        </div>
+        <div class="col-md-2">
+          <dl class="dl-horizontal"> 
+            <dt >身高:</dt><dd>200.0cm</dd>
+            <dt>体重:</dt><dd>104.3公斤</dd>
+            <dt>生日:</dt><dd>1991-06-29</dd>
+            <dt>选秀:</dt><dd>2011</dd>
+            <dt>经历:</dt><dd>5</dd>
+          </dl>
+        </div>
+        <div class="col-md-5">
+          <table class="table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>得分</td>
+              <td>篮板</td>
+              <td>助攻</td>
+              <td>抢断</td>
+              <td>盖帽</td>
+            </tr>
+            <tr>
+              <td><h2>24.0</h2></td>
+              <td><h2>5.9</h2></td>
+              <td><h2>3.1</h2></td>
+              <td><h2>1.9</h2></td>
+              <td><h2>0.6</h2></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" id="button">
+          <button type="button" class="btn btn-default">得分</button>
+          <button type="button" class="btn btn-default">出手数</button>
+          <button type="button" class="btn btn-default">命中率</button>
+          <button type="button" class="btn btn-default">3分得分</button>
+          <button type="button" class="btn btn-default">3分出手数</button>
+          <button type="button" class="btn btn-default">3分命中率</button>
+          <button type="button" class="btn btn-default">罚球出手数</button>
+          <button type="button" class="btn btn-default">罚球命中次数</button>
+          <button type="button" class="btn btn-default">罚球命中率</button>
+          <button type="button" class="btn btn-default">防守篮板</button>
+          <button type="button" class="btn btn-default">进攻篮板</button>
+          <button type="button" class="btn btn-default">篮板球数</button>
+          <button type="button" class="btn btn-default">助攻</button>
+          <button type="button" class="btn btn-default">抢断</button>
+          <button type="button" class="btn btn-default">盖帽</button>
+          <button type="button" class="btn btn-default">失误</button>
+          <button type="button" class="btn btn-default">犯规</button>
+      </div>
+    </div>
+    <div class="row">
+    
+</div>
+<script>
+
+</script>
+{% endblock %}

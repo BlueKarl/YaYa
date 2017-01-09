@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./static/css/todc-bootstrap.min.css" rel="stylesheet">
+    <style>
+    .body{
+    }
+    .logo{
+        margin-top: 10px;
+        padding-left: 150px;
+        padding-right: 50px;
+        height: 50px;
+    }
+    .nav{
+        background-color: white;
+        height: 70px;
+    }
+    .nav>li{
+        height: 70px;
+    }
+    .nav-pills>li>a{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-radius: 0px;
+    }
+    .index-width{
+        width: 80%
+    }
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/echarts.min.js"></script>
+  </head>
+  <body style="background-color: #EEE;">
+    {% block body %}{% endblock %}
+  </body>
+  <div class="footer" style="text-align: center;">
+    <div >
+      <a href="./" target="_blank" rel="nofollow">关于我们</a> | <a href="./" target="_blank" rel="nofollow">About US</a> | <a href="./" target="_blank" rel="nofollow">服务协议</a> | <a href="./" target="_blank" rel="nofollow">客服中心</a> | <a href="./" target="_blank" rel="nofollow">网站导航</a>
+    </div>
+    <div>Copyright © 2016 - 2017 YaYa. All Rights Reserved</div>
+    <div>
+        <a href="./" target="_blank" rel="nofollow">鸭鸭小组</a> <a href="./" target="_blank" rel="nofollow">版权所有</a>
+    </div>
+</div>
+</html>
+

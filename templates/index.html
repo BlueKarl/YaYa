@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% extends "./base.html" %}
+{% block title %}鸭鸭直播{% endblock %}
+{% block head %}
+<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+{% endblock %}
+{% block body %}
+<style>
+    .breadcrumb{
+        background-color: #EEE;
+        margin-top: 20px;
+    }
+    #team{
+        background-color: white;
+    }
+    h6{
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    .dl-horizontal{
+        border-right: 1px solid #EEE;
+    }
+    td{
+        text-align: center;
+        border:1px solid #ddd
+    }
+    td>span{
+        font-size: 36px;
+    }
+    .font-color{
+         font-size: 36px;
+         color: red; 
+    }
+</style>
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation">
+      <img class="logo" src="../static/img/logo2.png" style="width: 270px;height: 70px;margin-top: 0px;"></img>
+  </li>
+  <li role="presentation" class="active"> <a href="/"><strong><h4>看比赛</h4></strong></a></li>
+  <!--li role="presentation"><a href="/team"><strong><h4>球队</h4></strong></a></li>
+  <li role="presentation"><a href="/player"><strong><h4>球员</h4></strong></a></li>
+  <li role="presentation"><a href="#"><strong><h4>精彩动图</h4></strong></a></li-->
+</ul>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="#">首页</a></li>
+          <li class="active">看直播</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="team">
+        <div class="col-md-2">
+          <img src="http://mat1.gtimg.com/sports/nba/logo/1602/24.png">
+        </div>
+        <div class="col-md-4">
+          <dl class="dl-horizontal">
+            <dt><h2>马刺</h2></dt><dd></dd>
+            <dt>西部联盟:</dt><dd>第2名</dd>
+            <dt>连续战绩:</dt><dd>1连胜</dd>
+            <dt>教练:</dt><dd>格雷格-波波维奇</dd>
+            <dt>主球场:</dt><dd>AT&amp;T中心</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>
+            <img class="lazy" title="湖人" src="http://mat1.gtimg.com/sports/nba/logo/1602/13.png" style="display: inline;">
+            <span title="湖人">湖人(客)
+            </span>
+          </td>
+          <td style="vertical-align:middle;"><span class="font-color">88-85<br></span>第二节 03:21</td>
+          <td>
+            <img class="lazy" title="马刺" src="http://mat1.gtimg.com/sports/nba/logo/1602/24.png" style="display: inline;">
+            <span title="马刺">马刺(主)
+            </span>
+          </td>
+        </tr>
+        <tr>
+           <td j> 腾讯视频</td>
+           <td></td>
+           <td><button type="button" class="btn btn-primary">点击观看</button></td>
+        </tr>
+        <tr>
+           <td> 纬来体育超清</td>
+           <td></td>
+           <td><button type="button" class="btn btn-primary">点击观看</button></td>
+        </tr>
+        <tr>
+           <td> 纬来体育标清</td>
+           <td></td>
+           <td><button type="button" class="btn btn-primary">点击观看</button></td>
+        </tr>
+        <tr>
+           <td> 英文源</td>
+           <td></td>
+           <td><button type="button" class="btn btn-primary">点击观看</button></td>
+        </tr>
+        <tr>
+           <td> 韩国源</td>
+           <td></td>
+           <td><button type="button" class="btn btn-primary">点击观看</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
